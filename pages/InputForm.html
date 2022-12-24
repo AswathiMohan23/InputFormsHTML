@@ -93,7 +93,14 @@
             else 
                 phoneError.textContent="phone number is Incorrect"  
             });
-            
+            const password = document.querySelector('#password');
+            const passwordError = document.querySelector('.password-error');
+            password.addEventListener('input', function() {
+            const passwordRegex = RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[-+(){}_!@#$%^&*., ?]){8,}.*$');
+            if (passwordRegex.test(password.value))
+                passwordError.textContent = "";
+            else passwordError.textContent = "password must contains (min 8 Characters,1 Upper Case, 1 numeric number,1 Special Character)";
+            });
         </script>
     </body>
    
