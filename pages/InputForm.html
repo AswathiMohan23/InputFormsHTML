@@ -78,22 +78,22 @@
             const email = document.querySelector('#email');
             const emailError = document.querySelector('.email-error');
             email.addEventListener('input', function() {
-            let EMAIL_REGEX_TYPE_1 = RegExp('^[A-Za-z0-9.+-]*[a-zA-Z0-9]+[@]{1}[b][r][i][d][g][e][l][a][b][z]+[.][a-z]+$');
-            let EMAIL_REGEX_TYPE_2 = RegExp('^[A-Za-z0-9.+-_]*[a-zA-Z0-9]+[@][b][r][i][d][g][e][l][a][b][z]+[.][a-z]+[.]?[a-z]{2}$');
-            if (EMAIL_REGEX_TYPE_1.test(email.value) || EMAIL_REGEX_TYPE_2.test(email.value))
+            let emailRegex1= RegExp('^[A-Za-z0-9.+-]*[a-zA-Z0-9]+[@]{1}[b][r][i][d][g][e][l][a][b][z]+[.][a-z]+$');
+            let emailRegex2 = RegExp('^[A-Za-z0-9.+-_]*[a-zA-Z0-9]+[@][b][r][i][d][g][e][l][a][b][z]+[.][a-z]+[.]?[a-z]{2}$');
+            if (emailRegex1.test(email.value) || emailRegex2.test(email.value))
                 emailError.textContent = "";
             else emailError.textContent = "Email is incorrect";
             });
-            const phone=document.querySelector('#phone');
-            const phoneError=document.querySelector('.phone-error');
-            phone.addEventListener('input',function(){
-                let phnRegex=RegExp('[91]+() +[789][0-9]{9}');
-                if(phoneRegex.test(phone.value))
-                    phoneError.phoneContent="";
-                else 
-                    phoneError.phoneContent="phone number is Incorrect"  
+            const phone = document.querySelector('#phone');
+            const phoneError = document.querySelector('.phone-error');
+            phone.addEventListener('input', function() {
+            const phoneRegex = RegExp('^(91 )[5-9][0-9]{9}$');
+            if (phoneRegex.test(phone.value))
+                phoneError.textContent = "";
+            else 
+                phoneError.textContent="phone number is Incorrect"  
             });
-           
+            
         </script>
     </body>
    
